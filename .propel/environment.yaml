@@ -1,0 +1,9 @@
+stack: java-maven
+install_cmd: mvn -q -B dependency:resolve
+syntax_cmd: mvn -q -B compile
+build_cmd: mvn -q -B test-compile
+test_cmd: mvn -q -B test; cat target/surefire-reports/TEST-*.xml
+test_selector: mvn -q -B test -Dtest='{path}' -Dsurefire.failIfNoSpecifiedTests=false;
+  cat target/surefire-reports/TEST-*.xml
+dependency_file: pom.xml
+runtime_version: '21'
