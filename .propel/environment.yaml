@@ -1,0 +1,9 @@
+stack: java-maven
+install_cmd: cd backend && mvn -q -B dependency:resolve
+syntax_cmd: cd backend && mvn -q -B compile
+build_cmd: cd backend && mvn -q -B compile
+test_cmd: cd backend && mvn -q -B test; cat target/surefire-reports/TEST-*.xml
+test_selector: cd backend && mvn -q -B test -Dtest='{path}' -Dsurefire.failIfNoSpecifiedTests=false;
+  cat target/surefire-reports/TEST-*.xml
+dependency_file: pom.xml
+project_dir: backend
