@@ -1,0 +1,12 @@
+# Maven
+/backend/target/
+
+# IDEs
+/.idea/
+*.iml
+
+# Node
+/node_modules/
+
+# Environment
+.env
